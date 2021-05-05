@@ -5,7 +5,6 @@ require ('chai')
   .use(require('chai-as-promised'))
   .should()
 
-
 contract('Token',  ([deployer, receiver]) => {
   const name = 'DApp Token'
   const symbol = 'DAPP'
@@ -44,9 +43,7 @@ contract('Token',  ([deployer, receiver]) => {
 	})
   })
 
-  
   describe('sending tokens', () => {
-
   	let amount
   	let result
 
@@ -55,7 +52,6 @@ contract('Token',  ([deployer, receiver]) => {
   	    amount = tokens(100)
         result = await token.transfer(receiver, amount, { from: deployer })
        })
-
 
   	  it('transfers token balances', async () => {
 	    let balanceOf
