@@ -66,17 +66,17 @@ contract('Token',  ([deployer, receiver]) => {
 
 	  it('emits a transfer request', async () => {
 	    const log = result.logs[0]
-		log.event.should.equal('Transfer')
-	    
+		  log.event.should.equal('Transfer')
+
 	    const event = log.args
 	    event.from.toString().should.equal(deployer, 'from is correct')
 	    event.to.should.equal(receiver, 'to is correct')
 	    event.value.toString().should.equal(amount.toString(), 'value is correct')
 	  })
-  	})
-
-  	describe('failure ', () => {
-  	  it('rejects insuffecient balances', async () => {
+  })
+  
+  describe('failure ', () => {
+    it('rejects insuffecient balances', async () => {
 	    let invalidAmount
 	    invalidAmount = tokens(100000000)
 	    await token.transfer(receiver, invalidAmount, { from: deployer }).should.be.rejectedWith(EVM_REVERT)
@@ -89,7 +89,5 @@ contract('Token',  ([deployer, receiver]) => {
 	    await token.transfer('0x0', tokens(10), { from: deployer }).should.be.rejected
       })
   	})
-
-  	
   })
 })
