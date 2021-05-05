@@ -65,7 +65,7 @@ contract('Token',  ([deployer, receiver]) => {
 
 	  it('emits a transfer request', async () => {
 	    const log = result.logs[0]
-		log.event.should.equal('Transfer')
+      log.event.should.equal('Transfer')
 
 	    const event = log.args
 	    event.from.toString().should.equal(deployer, 'from is correct')
