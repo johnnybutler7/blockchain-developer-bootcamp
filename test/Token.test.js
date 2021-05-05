@@ -83,14 +83,14 @@ contract('Token',  ([deployer, receiver]) => {
   	  it('rejects insuffecient balances', async () => {
 	    let invalidAmount
 	    invalidAmount = tokens(100000000)
-        await token.transfer(receiver, invalidAmount, { from: deployer }).should.be.rejectedWith(EVM_REVERT)
+	    await token.transfer(receiver, invalidAmount, { from: deployer }).should.be.rejectedWith(EVM_REVERT)
 
-        invalidAmount = tokens(10)
-        await token.transfer(deployer, invalidAmount, { from: receiver }).should.be.rejectedWith(EVM_REVERT)
+	    invalidAmount = tokens(10)
+	    await token.transfer(deployer, invalidAmount, { from: receiver }).should.be.rejectedWith(EVM_REVERT)
 	  })
 
 	  it('rejects invalid recipients', async () => {
-        await token.transfer('0x0', tokens(10), { from: deployer }).should.be.rejected
+	    await token.transfer('0x0', tokens(10), { from: deployer }).should.be.rejected
       })
   	})
 
