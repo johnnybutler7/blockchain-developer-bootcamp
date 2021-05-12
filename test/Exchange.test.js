@@ -187,7 +187,7 @@ contract('Exchange',  ([deployer, feeAccount, user1]) => {
     describe('failure ', () => {
       it('rejects ether withdraws', async () => {
         //Don't approve any tokens before depositing
-        await exchange.withdrawToken(ETHER_ADDRESS,tokens(10), { from: user1 } ).should.be.rejectedWith(EVM_REVERT)
+        await exchange.withdrawToken(ETHER_ADDRESS, tokens(10), { from: user1 } ).should.be.rejectedWith(EVM_REVERT)
       })
 
       it('fails for insufficient balances', async () => {
@@ -198,17 +198,16 @@ contract('Exchange',  ([deployer, feeAccount, user1]) => {
     })
   })
 
-  describe('checking balances', () => {
-    let amount
+  describe('making orders', () => {
+    let result
 
     beforeEach(async () => {
-      amount = ether(1)
-      await exchange.depositEther( { from: user1, value: ether(1) } )
+      result = await exchange.makeOrder(token.address, tokens(1), ETHER_ADDRESS, ether(1), { from: user1 } )
     })
 
-    it('returns user balance', async () => {
-      const result = await exchange.balanceOf(ETHER_ADDRESS, user1)
-      result.toString().should.equal(amount.toString())
+    it('tracks the newly created order', async () => {
+      const orderCount = await exchange.orderCount()
+      orderCount.toString().should.equal('1')
     })
   })
 })
