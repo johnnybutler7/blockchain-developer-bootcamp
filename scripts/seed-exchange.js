@@ -20,6 +20,7 @@ module.exports = async function(callback) {
   try {
     // Fetch accounts from wallet - these are unlocked
     const accounts = await web3.eth.getAccounts()
+    console.log(`Accounts ${accounts}`)
 
     // Fetch the deployed token
     const token = await Token.deployed()
@@ -31,6 +32,7 @@ module.exports = async function(callback) {
 
     // Give tokens to account[1]
     const sender = accounts[0]
+    //web3.eth.defaultAccount = accounts[0]
     const receiver = accounts[1]
     let amount = web3.utils.toWei('10000', 'ether') // 10,000 tokens
 
