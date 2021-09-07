@@ -32,7 +32,7 @@ module.exports = {
       },
       ropsten: {
       provider: function() {
-        return new HDWalletProvider(privateKeys.split(','),, `https://ropsten.infura.io/v3/${projectID}`, 0, 2)
+        return new HDWalletProvider(privateKeys.split(','), `https://ropsten.infura.io/v3/${projectID}`, 0, 2)
       },
       network_id: 3,
       gas: 5000000,
