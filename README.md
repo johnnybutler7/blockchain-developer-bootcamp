@@ -4,6 +4,7 @@ Decentralised web application as part of completing the blockchain developer boo
 More details coming soon.
 
 # Technologies
+- Solidity
 - Web3
 - React
 - Truffle
