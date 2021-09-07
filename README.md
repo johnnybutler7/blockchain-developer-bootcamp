@@ -1,6 +1,7 @@
 # Project Details
 
-Decentralised web application as part of completing the blockchain developer bootcamp on DAAP University - https://www.dappuniversity.com/bootcamp
+Decentralised web application as part of completing the blockchain developer bootcamp on Daap University - https://www.dappuniversity.com/bootcamp
+As part of my learing I decided to develop the same application but using the latest version of Ruby/Rails(https://github.com/johnnybutler7/blockchain-developer-bootcamp-rails), this will form the basis of a blog post to compare the relevant technologies from my background/perspective.
 More details coming soon.
 
 # Technologies
@@ -12,4 +13,4 @@ More details coming soon.
 - Ropsten (staging)
 - Infura
 - Bootstrap
-
+- Heroku (staging) - URL coming soon
