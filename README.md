@@ -13,4 +13,4 @@ More details coming soon.
 - Ropsten (staging)
 - Infura
 - Bootstrap
-- Heroku (staging) - https://dapp-token-exchange-jb.herokuapp.com/  (Manually connect with metamask until auto connect button is implemented)
+- Heroku (staging) - https://dapp-token-exchange-jb.herokuapp.com/  (Manually connect with metamask on the Ropsten Network until auto connect button is implemented)
